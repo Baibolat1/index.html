@@ -1,263 +1,291 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Банкетный Зал — Тараз</title>
-  <style>
-    :root {
-      --bg-color: #0f172a;
-      --card-bg: #1e293b;
-      --accent: #f59e0b;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --success: #10b981;
-      --danger: #ef4444;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    body { background: var(--bg-color); color: var(--text); padding: 16px; font-size: 15px; line-height: 1.5; }
-    
-    .container { max-width: 480px; margin: 0 auto; }
-    
-    header { text-align: center; margin-bottom: 24px; padding-top: 12px; }
-    header h1 { font-size: 24px; color: var(--accent); margin-bottom: 6px; }
-    header p { color: var(--text-muted); font-size: 14px; }
-    
-    .card { background: var(--card-bg); border-radius: 16px; padding: 18px; margin-bottom: 20px; border: 1px solid #334155; }
-    .card h2 { font-size: 18px; margin-bottom: 12px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
-    
-    /* Галерея фото */
-    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .gallery img { width: 100%; height: 110px; object-fit: cover; border-radius: 10px; border: 1px solid #334155; }
-    
-    /* Калькулятор */
-    .form-group { margin-bottom: 14px; }
-    label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
-    input, select { width: 100%; padding: 12px; background: #0f172a; border: 1px solid #334155; border-radius: 10px; color: #fff; font-size: 15px; outline: none; }
-    input:focus, select:focus { border-color: var(--accent); }
-    
-    .total-box { background: #0f172a; border-radius: 12px; padding: 14px; text-align: center; margin-top: 16px; border: 1px dashed var(--accent); }
-    .total-price { font-size: 22px; font-weight: bold; color: var(--accent); margin-top: 4px; }
-    
-    /* Календарь свободных дат */
-    .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; margin-top: 10px; }
-    .cal-day-name { font-size: 11px; color: var(--text-muted); padding-bottom: 4px; }
-    .cal-date { padding: 10px 0; border-radius: 8px; font-size: 13px; font-weight: 500; background: #0f172a; border: 1px solid #334155; }
-    .cal-date.free { border-color: var(--success); color: var(--success); }
-    .cal-date.busy { background: #2a1215; border-color: var(--danger); color: var(--danger); text-decoration: line-through; opacity: 0.6; }
-    .legend { display: flex; gap: 16px; justify-content: center; margin-top: 12px; font-size: 12px; color: var(--text-muted); }
-    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 4px; }
-    
-    /* Кнопка WhatsApp */
-    .btn-wa { display: block; width: 100%; background: #25D366; color: #fff; text-align: center; padding: 14px; border-radius: 12px; font-weight: bold; font-size: 16px; text-decoration: none; border: none; margin-top: 16px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
-    .btn-wa:active { transform: scale(0.98); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банкетный Зал «Royal» | Тараз</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #080808;
+            --card-bg: #121212;
+            --gold-primary: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+            --gold-glow: rgba(212, 175, 55, 0.25);
+            --text-light: #F5F5F5;
+            --text-muted: #A0A0A0;
+            --border-gold: rgba(212, 175, 55, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 10px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Header */
+        .header-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--gold-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold-gradient);
+        }
+
+        .crown-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: 700;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        /* Section Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            padding: 24px 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+        }
+
+        .card-title {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            color: var(--gold-primary);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 110px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            border-color: var(--gold-primary);
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input, select {
+            width: 100%;
+            background: #1a1a1a;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            padding: 12px 14px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 8px var(--gold-glow);
+        }
+
+        /* Total Box */
+        .total-box {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--gold-primary);
+            border-radius: 14px;
+            padding: 16px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .total-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .total-amount {
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
+            font-weight: 700;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 4px;
+        }
+
+        /* Button */
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: #25D366;
+            color: #000;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 16px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-  <header>
-    <h1>👑 Банкетный Зал «Royal»</h1>
-    <p>г. Тараз • Мероприятия любого масштаба</p>
-  </header>
-
-  <!-- Галерея фото (легко меняется на реальные фото ресторана) -->
-  <div class="card">
-    <h2>📸 Атмосфера и Зал</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=400" alt="Интерьер">
-      <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=400" alt="Столы">
-      <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=400" alt="Декор">
-      <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400" alt="Сцена">
-    </div>
-  </div>
-
-  <!-- Калькулятор расчетов -->
-  <div class="card">
-    <h2>🧮 Расчет стоимости</h2>
-    
-    <div class="form-group">
-      <label>Количество гостей:</label>
-      <input type="number" id="guests" value="100" min="20" max="500" oninput="calculate()">
+    <!-- Header -->
+    <div class="header-card">
+        <div class="crown-icon">👑</div>
+        <h1 class="title">Банкетный Зал «Royal»</h1>
+        <p class="subtitle">г. Тараз • Торжества & Мероприятия Высокого Уровня</p>
     </div>
 
-    <div class="form-group">
-      <label>Пакет меню:</label>
-      <select id="menu" onchange="calculate()">
-        <option value="6000">Стандарт — 6,000 ₸ / чел</option>
-        <option value="9000" selected>Премиум — 9,000 ₸ / чел</option>
-        <option value="12000">VIP Люкс — 12,000 ₸ / чел</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label>Желаемая дата:</label>
-      <input type="date" id="event-date" onchange="calculate()">
-    </div>
-
-    <div class="total-box">
-      <div>Ориентировочная сумма:</div>
-      <div class="total-price" id="total-val">900,000 ₸</div>
-    </div>
-
-    <button class="btn-wa" onclick="sendToWhatsapp()">💬 Забронировать через WhatsApp</button>
-  </div>
-
-  <!-- Календарь броней (Занято / Свободно) -->
-  <div class="card">
-    <h2>📅 График бронирований</h2>
-    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Актуальные даты на этот месяц:</p>
-    
-    <div class="calendar-grid">
-      <div class="cal-day-name">Пн</div><div class="cal-day-name">Вт</div><div class="cal-day-name">Ср</div><div class="cal-day-name">Чт</div><div class="cal-day-name">ПКрасава, вижу твои репозитории в GitHub-приложении (`aiogram-bot` и `gb-bot`)! Вся база готова.
-
-Работать через приложение GitHub на iPhone супер-удобно:
-1. Создаешь новый публичный репозиторий (например, `taraz-landing`).
-2. Закидываешь туда файл `index.html`.
-3. В настройках репозитория в пару тапов включаешь **GitHub Pages** (раздел Pages -> Deploy from branch `main`).
-4. Получаешь готовый HTTPS-сайт вида `baibolat1.github.io/taraz-landing` абсолютно бесплатно и навсегда!
-
-Когда захочешь поменять код или фото — прямо в приложении заходишь в `index.html`, редактируешь и делаешь **Commit**. Через 10 секунд всё обновляется в онлайне.
-
----
-
-Давай прямо сейчас докрутим наш **Шаблон №1 (Банкетный зал)**: добавим в него **галерею реальных фото** и **интерактивный календарь свободных/занятых дат**.
-
-Вот обновленный единый HTML-код. Скопируй его и закинь себе в файл:
-
-```html
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Банкетный Зал — Тараз</title>
-  <style>
-    :root { --gold: #d4af37; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    body { background: var(--bg); color: var(--text); padding-bottom: 30px; }
-    header { background: linear-gradient(135deg, #1e293b, #0f172a); text-align: center; padding: 30px 15px; border-bottom: 2px solid var(--gold); }
-    h1 { color: var(--gold); font-size: 26px; margin-bottom: 5px; }
-    p.subtitle { color: #94a3b8; font-size: 14px; }
-    
-    .container { padding: 15px; max-width: 500px; margin: 0 auto; }
-    .card { background: var(--card); border-radius: 12px; padding: 15px; margin-bottom: 20px; border: 1px solid #334155; }
-    h2 { font-size: 18px; color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-
-    /* Галерея фото */
-    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
-    .gallery img { width: 100%; height: 110px; object-fit: cover; border-radius: 8px; border: 1px solid #475569; }
-
-    /* Календарь дат */
-    .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; font-size: 12px; }
-    .day-name { color: #94a3b8; font-weight: bold; padding-bottom: 5px; }
-    .date-btn { background: #334155; padding: 10px 0; border-radius: 6px; border: none; color: white; font-weight: bold; cursor: pointer; }
-    .date-btn.free { background: #15803d; color: #fff; } /* Зеленый — свободно */
-    .date-btn.busy { background: #991b1b; color: #fca5a5; opacity: 0.6; cursor: not-allowed; } /* Красный — занято */
-    .date-btn.selected { border: 2px solid var(--gold); box-shadow: 0 0 10px var(--gold); }
-
-    /* Калькулятор */
-    label { font-size: 13px; color: #cbd5e1; display: block; margin-top: 10px; }
-    input, select { width: 100%; padding: 12px; background: #0f172a; border: 1px solid #475569; color: white; border-radius: 8px; margin-top: 5px; font-size: 15px; }
-    .total-box { background: #0f172a; border: 1px solid var(--gold); padding: 12px; border-radius: 8px; text-align: center; margin-top: 15px; }
-    .total-price { font-size: 22px; font-weight: bold; color: var(--gold); }
-
-    /* Кнопка WhatsApp */
-    .btn-wa { display: block; background: #22c55e; color: white; text-align: center; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; font-size: 16px; }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1 id="hallName">Ресторан "Тараз Холл"</h1>
-    <p class="subtitle">Банкеты • Toй • Мероприятия</p>
-  </header>
-
-  <div class="container">
-
-    <!-- Галерея фото -->
+    <!-- Gallery -->
     <div class="card">
-      <h2>📸 Атмосфера и Зал</h2>
-      <div class="gallery">
-        <img src="[https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=400&q=80)" alt="Зал">
-        <img src="[https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80)" alt="Стол">
-        <img src="[https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=400&q=80)" alt="Оформление">
-        <img src="[https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=400&q=80)" alt="Блюда">
-      </div>
+        <h2 class="card-title">📸 Интерьер и Атмосфера</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=500" class="gallery-item" alt="Зал">
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=500" class="gallery-item" alt="Сервировка">
+            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500" class="gallery-item" alt="Декор">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=500" class="gallery-item" alt="Банкет">
+        </div>
     </div>
 
-    <!-- Календарь свободных дат -->
+    <!-- Calculator -->
     <div class="card">
-      <h2>📅 Проверка свободных дат (Октябрь)</h2>
-      <p style="font-size:12px; color:#94a3b8; margin-bottom:10px;">🟢 Свободно | 🔴 Забронировано</p>
-      <div class="calendar-grid">
-        <div class="day-name">Пн</div><div class="day-name">Вт</div><div class="day-name">Ср</div><div class="day-name">Чт</div><div class="day-name">Пт</div><div class="day-name">Сб</div><div class="day-name">Вс</div>
+        <h2 class="card-title">🧮 Расчет Стоимости</h2>
         
-        <!-- Дни октября (пример) -->
-        <button class="date-btn busy" disabled>10</button>
-        <button class="date-btn free" onclick="selectDate(this, '11 Октября')">11</button>
-        <button class="date-btn free" onclick="selectDate(this, '12 Октября')">12</button>
-        <button class="date-btn busy" disabled>13</button>
-        <button class="date-btn busy" disabled>14</button>
-        <button class="date-btn free" onclick="selectDate(this, '15 Октября')">15</button>
-        <button class="date-btn free" onclick="selectDate(this, '16 Октября')">16</button>
-      </div>
+        <div class="form-group">
+            <label for="event-date">Дата мероприятия:</label>
+            <input type="date" id="event-date">
+        </div>
+
+        <div class="form-group">
+            <label for="guests">Количество гостей:</label>
+            <input type="number" id="guests" value="100" min="1" oninput="calculateTotal()">
+        </div>
+
+        <div class="form-group">
+            <label for="menu">Пакет меню (на персону):</label>
+            <select id="menu" onchange="calculateTotal()">
+                <option value="8000">Премиум — 8 000 ₸</option>
+                <option value="12000">Luxe Royal — 12 000 ₸</option>
+                <option value="15000">VIP Exclusive — 15 000 ₸</option>
+            </select>
+        </div>
+
+        <div class="total-box">
+            <div class="total-label">Примерная стоимость:</div>
+            <div class="total-amount" id="total-price">800 000 ₸</div>
+        </div>
+
+        <a href="#" id="whatsapp-link" target="_blank" class="btn-whatsapp">
+            💬 Забронировать через WhatsApp
+        </a>
     </div>
+</div>
 
-    <!-- Калькулятор -->
-    <div class="card">
-      <h2>🧮 Расчет стоимости</h2>
-      
-      <label>Выбранная дата:</label>
-      <input type="text" id="selectedDateInput" value="Не выбрана" readonly style="color:var(--gold); font-weight:bold;">
-
-      <label>Количество гостей:</label>
-      <input type="number" id="guests" value="100" oninput="calculateTotal()">
-
-      <label>Пакет меню:</label>
-      <select id="menuPackage" onchange="calculateTotal()">
-        <option value="6000">Стандарт — 6 000 ₸ / чел</option>
-        <option value="8000" selected>Премиум — 8 000 ₸ / чел</option>
-        <option value="12000">VIP — 12 000 ₸ / чел</option>
-      </select>
-
-      <div class="total-box">
-        <div>Примерная сумма:</div>
-        <div class="total-price" id="totalPrice">800 000 ₸</div>
-      </div>
-
-      <a href="#" class="btn-wa" onclick="sendToWhatsApp()">💬 Забронировать через WhatsApp</a>
-    </div>
-
-  </div>
-
-  <script>
-    let chosenDate = "Не выбрана";
-
-    function selectDate(btn, dateStr) {
-      document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      chosenDate = dateStr;
-      document.getElementById('selectedDateInput').value = dateStr;
-    }
-
+<script>
     function calculateTotal() {
-      const guests = parseInt(document.getElementById('guests').value) || 0;
-      const pricePerGuest = parseInt(document.getElementById('menuPackage').value);
-      const total = guests * pricePerGuest;
-      document.getElementById('totalPrice').innerText = total.toLocaleString('ru-RU') + ' ₸';
+        const guests = parseInt(document.getElementById('guests').value) || 0;
+        const menuPrice = parseInt(document.getElementById('menu').value) || 0;
+        const date = document.getElementById('event-date').value;
+        
+        const total = guests * menuPrice;
+        
+        document.getElementById('total-price').innerText = total.toLocaleString('ru-RU') + ' ₸';
+
+        const phone = '77000000000'; // Замени на свой номер WhatsApp
+        const message = encodeURIComponent(`Здравствуйте! Хочу забронировать банкетный зал «Royal».\nДата: ${date || 'Не выбрана'}\nКоличество гостей: ${guests}\nВыбранный пакет: ${menuPrice.toLocaleString()} ₸\nОриентировочная сумма: ${total.toLocaleString()} ₸`);
+        
+        document.getElementById('whatsapp-link').href = `https://wa.me/${phone}?text=${message}`;
     }
 
-    function sendToWhatsApp() {
-      const guests = document.getElementById('guests').value;
-      const menu = document.getElementById('menuPackage').options[document.getElementById('menuPackage').selectedIndex].text;
-      const total = document.getElementById('totalPrice').innerText;
-      
-      const phone = "77071234567"; // Номер ресторана
-      const text = `Саламатсыз ба! Запрос на бронь в Тараз Холл:\n📅 Дата: ${chosenDate}\n👥 Гостей: ${guests}\n🍽 Пакет: ${menu}\n💰 Итого: ${total}`;
-      
-      window.open(`[https://wa.me/$](https://wa.me/$){phone}?text=${encodeURIComponent(text)}`, '_blank');
-    }
-  </script>
+    document.getElementById('event-date').addEventListener('change', calculateTotal);
+    calculateTotal();
+</script>
+
 </body>
 </html>
