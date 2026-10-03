@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Versailles Palace — Taraz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #08080a;
+            --surface: #121216;
+            --border: rgba(255, 255, 255, 0.08);
+            --gold: #d4af37;
+            --text-primary: #ffffff;
+            --text-secondary: #8e8e93;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px 14px 40px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px 20px 20px;
+            text-align: center;
+        }
+
+        .brand-logo {
+            width: 100%;
+            max-width: 240px;
+            height: auto;
+            display: block;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+        }
+
+        .hero-sub {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Halls Indicator */
+        .halls-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .hall-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 10px 4px;
+            text-align: center;
+        }
+
+        .hall-num {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .hall-label {
+            font-size: 10px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        /* Main Section Card */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 22px 20px;
+        }
+
+        .card-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+        }
+
+        /* Form Controls */
+        .field {
+            margin-bottom: 16px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .input, .select {
+            width: 100%;
+            background: #18181e;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            outline: none;
+            appearance: none;
+            transition: border-color 0.2s;
+        }
+
+        .input:focus, .select:focus {
+            border-color: var(--gold);
+        }
+
+        /* Price Banner */
+        .price-box {
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            text-align: center;
+            margin-top: 22px;
+        }
+
+        .price-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .price-val {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            margin-top: 4px;
+        }
+
+        /* Button */
+        .btn-wa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: var(--gold);
+            color: #000000;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 16px;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 16px;
+            transition: transform 0.1s;
+        }
+
+        .btn-wa:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header with Logo Image -->
+    <div class="hero">
+        <img src="https://fotovssylku.ru/i/IMG-0176.Q4b2G" alt="Versailles Palace" class="brand-logo">
+        <p class="hero-sub">Ресторанный Комплекс • г. Тараз</p>
+
+        <div class="halls-row">
+            <div class="hall-item">
+                <div class="hall-num">400</div>
+                <div class="hall-label">Главный зал</div>
+            </div>
+            <div class="hall-item">
+                <div class="hall-num">160</div>
+                <div class="hall-label">Мини зал</div>
+            </div>
+            <div class="hall-item">
+                <div class="hall-num">60</div>
+                <div class="hall-label">Банкетный</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calculator Card -->
+    <div class="card">
+        <div class="card-title">Онлайн-расчет торжества</div>
+
+        <div class="field">
+            <label for="hall">Выберите зал</label>
+            <select class="select" id="hall" onchange="calc()">
+                <option value="Главный зал (до 400 мест)">Главный зал — 400 мест</option>
+                <option value="Мини зал (до 160 мест)">Мини зал — 160 мест</option>
+                <option value="Банкетный зал (до 60 мест)">Банкетный зал — 60 мест</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="date">Дата мероприятия</label>
+            <input type="date" class="input" id="date" onchange="calc()">
+        </div>
+
+        <div class="field">
+            <label for="guests">Количество гостей</label>
+            <input type="number" class="input" id="guests" value="150" min="10" oninput="calc()">
+        </div>
+
+        <div class="field">
+            <label for="menu">Пакет меню (на персону)</label>
+            <select class="select" id="menu" onchange="calc()">
+                <option value="10000">Стандарт — 10 000 ₸</option>
+                <option value="14000" selected>Премиум — 14 000 ₸</option>
+                <option value="18000">VIP Versailles — 18 000 ₸</option>
+            </select>
+        </div>
+
+        <div class="price-box">
+            <div class="price-label">Предварительный бюджет</div>
+            <div class="price-val" id="total">2 100 000 ₸</div>
+        </div>
+
+        <a href="#" id="wa" target="_blank" class="btn-wa">
+            Забронировать в WhatsApp
+        </a>
+    </div>
+</div>
+
+<script>
+    function calc() {
+        const guests = parseInt(document.getElementById('guests').value) || 0;
+        const menu = parseInt(document.getElementById('menu').value) || 0;
+        const hall = document.getElementById('hall').value;
+        const date = document.getElementById('date').value;
+        const total = guests * menu;
+
+        document.getElementById('total').innerText = total.toLocaleString('ru-RU') + ' ₸';
+
+        const phone = '77000000000'; // Укажи актуальный номер WhatsApp
+        const text = encodeURIComponent(
+            `Здравствуйте, Versailles Palace!\n\n` +
+            `Интересует бронирование зала:\n` +
+            `• Зал: ${hall}\n` +
+            `• Дата: ${date || 'Не указана'}\n` +
+            `• Гостей: ${guests}\n` +
+            `• Пакет меню: ${menu.toLocaleString('ru-RU')} ₸ / чел\n` +
+            `• Примерная сумма: ${total.toLocaleString('ru-RU')} ₸`
+        );
+
+        document.getElementById('wa').href = `https://wa.me/${phone}?text=${text}`;
+    }
+
+    calc();
+</script>
+
+</body>
+</html>
